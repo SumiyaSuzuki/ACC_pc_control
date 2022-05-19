@@ -5791,7 +5791,6 @@ R1 = R2 = 10K &lt;a href="https://pricing.snapeda.com/parts/DTC114E/Nexperia%20U
 <parts>
 <part name="D1" library="Diodes" library_urn="urn:adsk.eagle:library:11396254" deviceset="1N4004" device="" package3d_urn="urn:adsk.eagle:package:10898391/4"/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
-<part name="D2" library="Diodes" library_urn="urn:adsk.eagle:library:11396254" deviceset="1N4004" device="" package3d_urn="urn:adsk.eagle:package:10898391/4"/>
 <part name="U1" library="Relays" library_urn="urn:adsk.eagle:library:14869337" deviceset="2-1393222-0" device="" package3d_urn="urn:adsk.eagle:package:14869499/2"/>
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
 <part name="D3" library="Diodes" library_urn="urn:adsk.eagle:library:11396254" deviceset="1N4004" device="" package3d_urn="urn:adsk.eagle:package:10898391/4"/>
@@ -5814,6 +5813,7 @@ R1 = R2 = 10K &lt;a href="https://pricing.snapeda.com/parts/DTC114E/Nexperia%20U
 <part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/5" package3d_urn="urn:adsk.eagle:package:23488/1"/>
 <part name="Q1" library="DTC114E" deviceset="DTC114E" device="M3T5G"/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="D4" library="Diodes" library_urn="urn:adsk.eagle:library:11396254" deviceset="1N4004" device="" package3d_urn="urn:adsk.eagle:package:10898391/4"/>
 </parts>
 <sheets>
 <sheet>
@@ -5832,16 +5832,11 @@ R1 = R2 = 10K &lt;a href="https://pricing.snapeda.com/parts/DTC114E/Nexperia%20U
 <text x="227.33" y="93.98" size="1.778" layer="94">至：PCの電源ボタン</text>
 </plain>
 <instances>
-<instance part="D1" gate="G$1" x="41.656" y="142.24" smashed="yes">
-<attribute name="NAME" x="39.3446" y="144.8816" size="1.778" layer="95"/>
-</instance>
+<instance part="D1" gate="G$1" x="41.656" y="142.24" smashed="yes"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes">
 <attribute name="DRAWING_NAME" x="215.646" y="14.986" size="1.4224" layer="94" font="vector"/>
 <attribute name="LAST_DATE_TIME" x="217.17" y="10.16" size="2.286" layer="94"/>
 <attribute name="SHEET" x="230.505" y="5.08" size="2.54" layer="94"/>
-</instance>
-<instance part="D2" gate="G$1" x="41.656" y="110.49" smashed="yes">
-<attribute name="NAME" x="39.3446" y="113.1316" size="1.778" layer="95"/>
 </instance>
 <instance part="U1" gate="A" x="73.66" y="137.16" smashed="yes" rot="R180"/>
 <instance part="SUPPLY1" gate="+5V" x="49.53" y="160.02" smashed="yes">
@@ -5890,6 +5885,7 @@ R1 = R2 = 10K &lt;a href="https://pricing.snapeda.com/parts/DTC114E/Nexperia%20U
 <attribute name="NAME" x="73.65238125" y="52.71356875" size="1.2719" layer="95"/>
 </instance>
 <instance part="GND7" gate="1" x="93.98" y="39.37" smashed="yes"/>
+<instance part="D4" gate="G$1" x="60.706" y="110.49" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -5900,16 +5896,26 @@ R1 = R2 = 10K &lt;a href="https://pricing.snapeda.com/parts/DTC114E/Nexperia%20U
 <label x="29.21" y="142.24" size="1.778" layer="95" rot="R180" xref="yes"/>
 <pinref part="D1" gate="G$1" pin="A"/>
 <wire x1="39.116" y1="142.24" x2="29.21" y2="142.24" width="0.1524" layer="91"/>
-<junction x="39.116" y="142.24"/>
 </segment>
 </net>
 <net name="ACC" class="0">
 <segment>
-<wire x1="34.29" y1="110.49" x2="39.116" y2="110.49" width="0.1524" layer="91"/>
+<wire x1="63.246" y1="110.49" x2="109.22" y2="110.49" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="110.49" x2="109.22" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="142.24" x2="93.98" y2="142.24" width="0.1524" layer="91"/>
+<pinref part="U1" gate="A" pin="2"/>
+<wire x1="109.22" y1="142.24" x2="115.57" y2="142.24" width="0.1524" layer="91"/>
+<junction x="109.22" y="142.24"/>
+<pinref part="D4" gate="G$1" pin="C"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="52.07" y1="109.22" x2="52.07" y2="110.49" width="0.1524" layer="91"/>
+<wire x1="52.07" y1="110.49" x2="30.48" y2="110.49" width="0.1524" layer="91"/>
 <label x="30.48" y="110.49" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="D2" gate="G$1" pin="A"/>
-<wire x1="39.116" y1="110.49" x2="30.48" y2="110.49" width="0.1524" layer="91"/>
-<junction x="39.116" y="110.49"/>
+<pinref part="D4" gate="G$1" pin="A"/>
+<wire x1="58.166" y1="110.49" x2="52.07" y2="110.49" width="0.1524" layer="91"/>
+<junction x="52.07" y="110.49"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -5970,21 +5976,6 @@ R1 = R2 = 10K &lt;a href="https://pricing.snapeda.com/parts/DTC114E/Nexperia%20U
 <pinref part="Q1" gate="G$1" pin="3"/>
 <wire x1="86.36" y1="49.53" x2="88.9" y2="49.53" width="0.1524" layer="91"/>
 <label x="88.9" y="49.53" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="D2" gate="G$1" pin="C"/>
-<wire x1="44.196" y1="110.49" x2="52.07" y2="110.49" width="0.1524" layer="91"/>
-<wire x1="52.07" y1="110.49" x2="109.22" y2="110.49" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="110.49" x2="109.22" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="142.24" x2="93.98" y2="142.24" width="0.1524" layer="91"/>
-<pinref part="U1" gate="A" pin="2"/>
-<pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="52.07" y1="109.22" x2="52.07" y2="110.49" width="0.1524" layer="91"/>
-<junction x="52.07" y="110.49"/>
-<wire x1="109.22" y1="142.24" x2="115.57" y2="142.24" width="0.1524" layer="91"/>
-<junction x="109.22" y="142.24"/>
 </segment>
 </net>
 <net name="N$3" class="0">
